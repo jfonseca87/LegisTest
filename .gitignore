@@ -1,0 +1,14 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs/Legis.Votaciones
+/Legis.Votaciones.Business/bin/Debug/netstandard2.0
+/Legis.Votaciones.Business/obj
+/Legis.Votaciones.Client/bin/Debug/netcoreapp3.1
+/Legis.Votaciones.Client/obj
+/Legis.Votaciones.Domain/bin/Debug/netstandard2.0
+/Legis.Votaciones.SQLRepository/bin/Debug/netstandard2.0
+/Legis.Votaciones.SQLRepository/obj
+/Legis.Votaciones.Domain/obj/Debug/netstandard2.0
+/Legis.Votaciones.Domain/obj

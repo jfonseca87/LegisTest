@@ -1,0 +1,19 @@
+﻿@model IEnumerable<Legis.Votaciones.Domain.Models.Elecciones>
+
+<div class="row">
+    @foreach (var votacion in Model)
+    {
+        <div class="card" style="width: 18rem; margin:5px;">
+            <img class="card-img-top" src="..." alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">@votacion.Nombre</h5>
+                <p>
+                    <label>Fecha Inicio: </label> @votacion.FechaInicio
+                    <label>Fecha Final: </label> @votacion.FechaFinal
+                </p>
+                <a asp-action="GenerarVotacion" asp-route-id="@votacion.EleccionId" class="btn btn-primary">Ir a Votación</a>
+            </div>
+        </div>
+    }
+</div>
+

@@ -1,0 +1,44 @@
+﻿<div class="container">
+    <div class="jumbotron">
+        <h1>
+            @ViewBag.Votacion.Nombre
+        </h1>        
+    </div>
+    <br />
+    <div class="row">
+        @foreach (var candidato in ViewBag.Candidatos)
+        {
+
+            <div class="card" style="width: 18rem; margin:5px;">
+                <img class="card-img-top" src="..." alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">@candidato.Nombres @candidato.Apellidos</h5>
+                    <p>
+                        @candidato.Descripcion
+                    </p>
+                    <button onclick="votar(@candidato.CandidatoId)" class="btn btn-primary">Votar</button>
+                </div>
+            </div>
+        }
+    </div>
+    
+</div>
+@section Scripts 
+{
+    <script>
+        function votar(candidatoId) {
+            const confirmVoto = confirm('Esta seguro de su voto?');
+
+            if (confirmVoto) {
+                const objVoto = {
+                    EleccionId: "@ViewBag.Votacion.EleccionId",
+                    CandidatoId: candidatoId,
+                    VotanteId: 1
+                };
+
+                $.post("/Votacion/GenerarVotacion", objVoto);
+            }
+        };
+    </script>
+}
+
